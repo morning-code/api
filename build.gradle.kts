@@ -21,8 +21,21 @@ dependencies {
 	//implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+	// AWS X-Ray
+	implementation("com.amazonaws:aws-xray-recorder-sdk-core")
+	implementation("com.amazonaws:aws-xray-recorder-sdk-aws-sdk")
+	implementation("com.amazonaws:aws-xray-recorder-sdk-aws-sdk-instrumentor")
+	// Testing
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
+	}
+}
+
+dependencyManagement {
+	imports {
+		mavenBom("com.amazonaws:aws-java-sdk-bom:1.11.67")
+		mavenBom("com.amazonaws:aws-xray-recorder-sdk-bom:2.3.0")
 	}
 }
 
