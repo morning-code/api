@@ -30,12 +30,15 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
+	// Spring Cloud Contract
+	//testImplementation("org.springframework.cloud:spring-cloud-starter-contract-verifier")
+	//testImplementation("org.springframework.cloud:spring-cloud-contract-spec-kotlin")
 }
 
 dependencyManagement {
 	imports {
 		mavenBom("com.amazonaws:aws-java-sdk-bom:1.11.67")
-		mavenBom("com.amazonaws:aws-xray-recorder-sdk-bom:2.3.0")
+		mavenBom("com.amazonaws:aws-xray-recorder-sdk-bom:1.1.0")
 	}
 }
 
