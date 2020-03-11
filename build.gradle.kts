@@ -22,6 +22,9 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
+	// Libraries
+	implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.10.3")
+
 	// AWS X-Ray
 	implementation("com.amazonaws:aws-xray-recorder-sdk-core")
 	implementation("com.amazonaws:aws-xray-recorder-sdk-aws-sdk")
@@ -30,6 +33,7 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
+	testImplementation("io.mockk:mockk:1.9")
 	// Spring Cloud Contract
 	//testImplementation("org.springframework.cloud:spring-cloud-starter-contract-verifier")
 	//testImplementation("org.springframework.cloud:spring-cloud-contract-spec-kotlin")
