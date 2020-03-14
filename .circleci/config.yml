@@ -39,7 +39,4 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
       # run tests!
-      - run:
-        override:
-          - gradle test jacocoTestReport
-          - /bin/bash .circleci/sonarqube.sh
+      - run: gradle test jacocoTestReport && /bin/bash .circleci/sonarqube.sh
