@@ -7,6 +7,7 @@ plugins {
   kotlin("plugin.spring") version "1.3.50"
   kotlin("plugin.jpa") version "1.3.50"
   jacoco
+  id("org.sonarqube") version "2.8"
 }
 
 group = "io.code.morning"
@@ -72,9 +73,17 @@ jacoco {
 tasks.jacocoTestReport {
   reports {
     xml.isEnabled = true
-    //xml.destination = file("${project.buildDir}/reports/jacoco/codeCoverageReport/report.xml")
-    html.isEnabled = true
+    html.isEnabled = false
   }
 
   dependsOn(tasks.withType<Test>())
+}
+
+sonarqube {
+  properties {
+    property("sonar.sourceEncoding", "UTF-8")
+    property("sonar.projectKey", "api")
+    property("sonar.sources", ".")
+    property("sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml")
+  }
 }
