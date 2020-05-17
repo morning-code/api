@@ -11,7 +11,7 @@ class IndexUsecaseImpl(
 
     fun makePageResponse(): List<BlogEntity> {
 
-        val blogs = blogRepository.list()
+        val blogs = blogRepository.list(0, 20)
 
         return blogs
     }
