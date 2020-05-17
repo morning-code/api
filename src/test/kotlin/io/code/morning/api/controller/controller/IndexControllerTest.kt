@@ -1,4 +1,4 @@
-package io.code.morning.api.application.controller
+package io.code.morning.api.controller.controller
 
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -8,8 +8,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.content
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import io.code.morning.api.application.resource.IndexResource
-import io.code.morning.api.domain.dto.BlogDto
+import io.code.morning.api.controller.resource.IndexResource
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
