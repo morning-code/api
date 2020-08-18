@@ -2,7 +2,7 @@
 #
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 #
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
@@ -39,8 +39,4 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
       # run tests!
-      - run: gradle test
-
-      - publish_code_coverage: gradle jacocoTestReport
-
-      - sonarqube: /bin/bash .circleci/sonarqube.sh
+      - run: gradle test jacocoTestReport && /bin/bash .circleci/sonarqube.sh

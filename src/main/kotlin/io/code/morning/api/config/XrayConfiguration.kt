@@ -1,12 +1,13 @@
 package io.code.morning.api.config
 
-import com.amazonaws.xray.javax.servlet.AWSXRayServletFilter
+//import com.amazonaws.xray.javax.servlet.AWSXRayServletFilter
 import org.springframework.boot.web.servlet.FilterRegistrationBean
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
 class XrayConfiguration {
+    /*
     @Bean
     fun awsxRayServletFilter() = FilterRegistrationBean<AWSXRayServletFilter>().apply {
         val registration = FilterRegistrationBean<AWSXRayServletFilter>()
@@ -17,4 +18,5 @@ class XrayConfiguration {
         registration.addInitParameter("fixedName", "morning-code-api-service")
         return registration
     }
+     */
 }

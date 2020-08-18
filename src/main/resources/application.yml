@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: local
+
+server:
+  port: 9080
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+morningcode:
+  services:
+    blogServiceUrl: "http://localhost:9081"
