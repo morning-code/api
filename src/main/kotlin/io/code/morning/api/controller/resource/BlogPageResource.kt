@@ -4,5 +4,6 @@ data class BlogPageResource(
     val id: String,
     val category: String,
     val title: String,
+    val summary: String,
     val html: String
 )

@@ -37,6 +37,7 @@ class BlogPageController(
               id = it.id!!.id,
               category = it.category!!,
               title = it.title!!,
+              summary = it.summary!!,
               html = it.detail!!
           )
         }.toList()
@@ -61,6 +62,7 @@ class BlogPageController(
               id = it.id!!.id,
               category = it.category!!,
               title = it.title!!,
+              summary = it.summary!!,
               html = it.detail!!
           )
         }.awaitSingle()
