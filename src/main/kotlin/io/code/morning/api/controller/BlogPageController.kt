@@ -34,11 +34,13 @@ class BlogPageController(
     val resource = blogUsecase.list(page, size).awaitSingle()
         .map {
           BlogPageResource(
-              id = it.id!!.id,
+              id = it.id.id,
               category = it.category!!,
               title = it.title!!,
               summary = it.summary!!,
-              html = it.detail!!
+              html = it.detail!!,
+              createdDate = it.createdDate!!,
+              updatedDate = it.updatedDate!!
           )
         }.toList()
 
@@ -59,11 +61,13 @@ class BlogPageController(
     val resource = blogUsecase.findById(BlogId(id))
         .map {
           BlogPageResource(
-              id = it.id!!.id,
+              id = it.id.id,
               category = it.category!!,
               title = it.title!!,
               summary = it.summary!!,
-              html = it.detail!!
+              html = it.detail!!,
+              createdDate = it.createdDate!!,
+              updatedDate = it.updatedDate!!
           )
         }.awaitSingle()
 
